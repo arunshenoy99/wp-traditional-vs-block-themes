@@ -10,7 +10,7 @@ function traditional_theme_files() {
 	 wp_enqueue_style( 'font-awesome-css', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array( 'bootstrap-css' ) );
 }
 
-add_action( 'wp_enqueue_scripts', 'traditional_theme_files' );
+// add_action( 'wp_enqueue_scripts', 'traditional_theme_files' );
 add_action( 'enqueue_block_assets', 'traditional_theme_files' );
 
 function no_admin_bar_for_subscribers() {
@@ -23,7 +23,7 @@ function no_admin_bar_for_subscribers() {
 
 add_action( 'wp_loaded', 'no_admin_bar_for_subscribers' );
 
-class CustomBlock {
+class DynamicBlock {
 	function __construct( $name, $render_callback = null, $data = null ) {
 		$this->name            = $name;
 		$this->data            = $data;
@@ -73,14 +73,26 @@ function add_editor_styles() {
 
 add_action( 'after_setup_theme', 'add_editor_styles' );
 
-new CustomBlock( 'navbar', true );
-new CustomBlock( 'carousel', true );
-new CustomBlock(
+new DynamicBlock( 'navbar', true );
+new DynamicBlock( 'carousel', true );
+new DynamicBlock(
 	'slide',
 	true,
 	array(
 		'fallbackimage' => get_theme_file_uri( '/img/img1.jpg' ),
 	)
 );
-new CustomBlock( 'posts', true );
-new CustomBlock( 'customfooter', true );
+new DynamicBlock( 'posts', true );
+new DynamicBlock( 'customfooter', true );
+
+class StaticBlock {
+	function __construct() {
+		add_action( 'enqueue_block_editor_assets', array( $this, 'static_block_assets' ) );
+	}
+
+	function static_block_assets() {
+		wp_enqueue_script( 'staticblock',  get_stylesheet_directory_uri() . "/build/staticblock.js", array( 'wp-blocks', 'wp-editor' ));
+	}
+}
+
+new StaticBlock();

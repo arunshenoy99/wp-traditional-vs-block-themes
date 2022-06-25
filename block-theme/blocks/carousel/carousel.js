@@ -19,8 +19,9 @@ registerBlockType(
 function EditComponent() {
      return (
           <>
-          <div id="mycarousel" class="carousel slide carousel-fade d-none d-md-block" data-ride="carousel">
-               <div class="carousel-inner d-none d-md-block" role="listbox">
+          <div id="mycarousel" className="carousel slide carousel-fade d-none d-md-block" data-ride="carousel">
+               <div className="carousel-inner d-none d-md-block" role="listbox">
+                    <p className="text-secondary">Add Slides Inside me</p>
                     <InnerBlocks allowedBlocks={ [ 'blocktheme/slide' ] }></InnerBlocks>
                </div>
           </div>

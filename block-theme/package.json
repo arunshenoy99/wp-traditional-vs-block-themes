@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "wp-scripts start blocks/navbar/navbar.js blocks/carousel/carousel.js blocks/slide/slide.js blocks/posts/posts blocks/customfooter/customfooter",
+    "start": "wp-scripts start blocks/navbar/navbar.js blocks/carousel/carousel.js blocks/slide/slide.js blocks/posts/posts blocks/customfooter/customfooter blocks/staticblock/staticblock.js",
     "dev": "wp-scripts start",
     "devFast": "wp-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1"

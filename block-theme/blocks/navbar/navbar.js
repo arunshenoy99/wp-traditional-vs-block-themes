@@ -23,7 +23,7 @@ function EditComponent() {
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
                          <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="/">
+                    <a class="navbar-brand">
                          <InnerBlocks allowedBlocks={ [ 'core/paragraph' ] }></InnerBlocks>
                     </a>
                </div>

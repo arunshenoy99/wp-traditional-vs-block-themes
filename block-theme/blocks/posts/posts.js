@@ -20,7 +20,7 @@ function EditComponent() {
                <div class="container-fluid bg-secondary">
                     <div class="row row-content">
                          <div class="col-12 text-center text-white">
-                              <h1>Custom Posts Block</h1>
+                              <h3>Posts Block Custom Design</h3>
                          </div>
                     </div>
                </div>
