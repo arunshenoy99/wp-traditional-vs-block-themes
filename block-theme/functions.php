@@ -13,7 +13,7 @@ function traditional_theme_files() {
 // add_action( 'wp_enqueue_scripts', 'traditional_theme_files' );
 add_action( 'enqueue_block_assets', 'traditional_theme_files' );
 
-function no_admin_bar_for_subscribers() {
+function no_admin_bar() {
 	$ourCurrentUser = wp_get_current_user();
 
 	if ( count( $ourCurrentUser->roles ) == 1 and $ourCurrentUser->roles[0] == 'administrator' ) {
@@ -21,7 +21,7 @@ function no_admin_bar_for_subscribers() {
 	}
 }
 
-add_action( 'wp_loaded', 'no_admin_bar_for_subscribers' );
+add_action( 'wp_loaded', 'no_admin_bar' );
 
 class DynamicBlock {
 	function __construct( $name, $render_callback = null, $data = null ) {

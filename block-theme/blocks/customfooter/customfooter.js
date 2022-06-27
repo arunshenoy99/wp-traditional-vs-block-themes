@@ -27,7 +27,7 @@ function EditComponent() {
           </div>
         <div className="row justify-content-center row-copyright">
             <div className="col-auto">
-                <p>&copy; Copyright 2020 Traditional Theme Pvt. Ltd | All rights reserved</p>
+                <p>&copy; Copyright 2020 Block Theme | All rights reserved</p>
             </div>
         </div>
     </div>
